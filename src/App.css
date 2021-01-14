@@ -1,38 +1,214 @@
-.App {
+/* Main styles */
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap");
+@import url("http://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
+
+body {
+  background-color: #222222;
+  height: 100%;
+  font-family: "Fraunces", serif;
+}
+
+.home {
+  font-size: 5em;
+  font-family: "Noto Sans SC", sans-serif;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.home input {
+  width: 500px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.home input:focus {
+  border: none;
+}
+
+.home button {
+  border: none;
+  background-color: #c70039;
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+  width: 60px;
+}
+
+.home button:hover {
+  background-color: #900c3f;
+}
+
+svg {
+  margin: 70px 0 0 0;
+}
+
+/* USER */
+
+.card-header {
+  margin-top: 0;
+  background-color: #511845;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header h4 {
+  font-size: 1.4em;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.user-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  color: #b9b8b9;
+  width: 400px;
+  min-height: 400px;
+  border-radius: 5px;
+}
+
+.user-card img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.user-info {
+  font-size: 1.1em;
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user-info p,
+h4 {
+  margin: 0;
+  font-weight: 100;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.go-back {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #333333;
+  border-radius: 5px;
+  padding: 10px 20px 12px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.go-back:hover {
+  background-color: #511845;
+}
+
+.link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.link p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  background-color: #900c3f;
+  border-radius: 5px;
+  padding: 10px 50px 12px 50px;
+}
+
+.link p:hover {
+  background-color: #511845;
+}
+
+.info-row {
+  display: flex;
+}
+
+.info-row p {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.text--transparent {
+  fill: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.anim-shape {
+  -webkit-transform-origin: 0x 150px;
+  -ms-transform-origin: 0x 150px;
+  transform-origin: 0x 150px;
+  -webkit-transform: scale(0, 1) translate(0, 0);
+  -ms-transform: scale(0, 1) translate(0, 0);
+  transform: scale(0, 1) translate(0, 0);
+  -webkit-animation: moving-panel 3s infinite alternate;
+  animation: moving-panel 3s infinite alternate;
+}
+
+.colortext .anim-shape:nth-child(1) {
+  fill: #b30077;
+}
+
+.colortext .anim-shape:nth-child(2) {
+  fill: #c70039;
+}
+
+.colortext .anim-shape:nth-child(3) {
+  fill: #900c3f;
+}
+
+.colortext .anim-shape:nth-child(4) {
+  fill: #511845;
+}
+
+.shadow {
+  -webkit-transform: translate(1px, 1px);
+  -ms-transform: translate(1px, 1px);
+  transform: translate(1px, 1px);
+}
+
+.anim-shape--shadow {
+  fill: rgb(94, 94, 94);
+  fill-opacity: 0.2;
+}
+
+@-webkit-keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
   }
 }
