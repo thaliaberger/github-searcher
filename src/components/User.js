@@ -39,11 +39,21 @@ function User(props) {
         <div className="user-info">
           <p>{state.bio ? `Bio: ${state.bio}` : ""}</p>
           <div className="info-row">
-            <p>
-              {state.location}
-              <br />
-              location
-            </p>
+            {state.location ? (
+              <p>
+                {" "}
+                {state.location}
+                <br />
+                location
+              </p>
+            ) : (
+              <p>
+                {" "}
+                -
+                <br />
+                location
+              </p>
+            )}
             <p>
               {state.followers}
               <br />

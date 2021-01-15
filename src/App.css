@@ -65,7 +65,7 @@ svg {
 /* USER */
 
 .card-header {
-  margin-top: 0;
+  margin-top: 10px;
   background-color: #511845;
   width: 100%;
   display: flex;
@@ -105,13 +105,18 @@ svg {
   max-height: 150px;
   border-radius: 50%;
   margin: 5px;
-  border: 2px solid #c70039;
+  border: 1px solid #c70039;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.3);
 }
 
 .user-info {
   font-size: 1.1em;
   margin: 10px;
   text-align: center;
+}
+
+.user-info > p {
+  font-size: 0.8em;
 }
 
 .user-info p,
@@ -142,7 +147,7 @@ h4 {
   text-decoration: none;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin: 15px 0;
 }
 
 .link p {
@@ -163,12 +168,13 @@ h4 {
 
 .info-row {
   display: flex;
+  justify-content: center;
 }
 
 .info-row p {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px;
+  margin: 20px 20px 10px 20px;
 }
 
 .text--transparent {
