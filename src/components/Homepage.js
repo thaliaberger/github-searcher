@@ -63,8 +63,8 @@ function Homepage() {
      class="text--transparent"></use> */}
       </svg>
       <input onChange={handleChange} type="text"></input>
-      <Link to={state.username}>
-        <button>Go</button>
+      <Link className="go" to={state.username}>
+        go
       </Link>
     </div>
   );

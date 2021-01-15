@@ -42,18 +42,17 @@ function Repos(props) {
               </p>
             </div>
             <div className="repo-row">
-              <Link className="repo-links" to={repo.homepage}>
+              <a href={repo.homepage} className="repo-links" target="_blank">
                 DEMO
-              </Link>
-              <Link className="repo-links" to={repo.html_url}>
+              </a>
+              <a href={repo.html_url} className="repo-links" target="_blank">
                 See on GitHub
-              </Link>
+              </a>
             </div>
           </div>
         ))}
-        <Link to={user}>Go Back</Link>
       </div>
-      <Link className="go-back" to="/">
+      <Link className="go-back" to={user}>
         go back
       </Link>
     </div>
