@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
 
 body {
-  background-image: url("./components/background.png");
+  background-image: url("./images/components/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: -100px;
