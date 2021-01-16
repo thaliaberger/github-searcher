@@ -7,11 +7,10 @@ function Repos(props) {
   const [state, setState] = useState([]);
   const [total, setTotal] = useState(0);
   const [pages, setPages] = useState([]);
+  const [limit, setLimit] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   const user = `/${props.match.params.username}`;
-
-  const limit = 10;
 
   useEffect(() => {
     async function fetchData() {
@@ -38,10 +37,7 @@ function Repos(props) {
       } catch (err) {}
     }
     fetchData();
-  }, [props, currentPage, total]);
-
-  console.log(total);
-  console.log(pages);
+  }, [props, currentPage, total, limit]);
 
   function PreviousPage() {
     currentPage > 1
@@ -63,8 +59,21 @@ function Repos(props) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function handleChange(event) {
+    setLimit(event.target.value);
+  }
+
   return (
     <div>
+      <select onChange={handleChange} name="options" id="options">
+        <option value="10" disabled selected>
+          show
+        </option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
       <div className="repos-container">
         <div className="all-repos">
           {state.map((repo) => (
@@ -95,10 +104,25 @@ function Repos(props) {
                 )}
               </div>
               <div className="repo-row">
-                <a href={repo.homepage} className="repo-links" target="_blank">
-                  DEMO
-                </a>
-                <a href={repo.html_url} className="repo-links" target="_blank">
+                {repo.homepage ? (
+                  <a
+                    href={repo.homepage}
+                    className="repo-links"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    DEMO
+                  </a>
+                ) : (
+                  ""
+                )}
+
+                <a
+                  href={repo.html_url}
+                  className="repo-links"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   See on GitHub
                 </a>
               </div>

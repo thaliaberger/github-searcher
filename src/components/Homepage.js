@@ -62,7 +62,7 @@ function Homepage() {
         {/* <use xlink:href="#s-text"
      class="text--transparent"></use> */}
       </svg>
-      <input onChange={handleChange} type="text"></input>
+      <input onChange={handleChange} type="text" placeholder="Search User..." />
       <Link className="go" to={state.username}>
         go
       </Link>
